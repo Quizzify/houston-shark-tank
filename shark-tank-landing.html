@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Real Shark Tank — $50,000 at Stake | Houston Business Coalition on Health</title>
+<meta name="description" content="Present your health benefits solution to 150–200 employer leaders. $50,000 in prizes. Houston, August 27, 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+  /* ── RESET & BASE ── */
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    font-family:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color:#1a1a2e; background:#fff; line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img { max-width:100%; display:block; }
+  a { text-decoration:none; color:inherit; }
+
+  /* ── COLORS (adjust to match VI branding) ── */
+  :root {
+    --navy: #0b1d3a;
+    --blue: #1b4d8e;
+    --accent: #e8a838;     /* gold / amber CTA */
+    --accent-hover: #d4922a;
+    --light-bg: #f4f6fa;
+    --text: #1a1a2e;
+    --muted: #5a6577;
+    --white: #ffffff;
+    --gradient-hero: linear-gradient(135deg, #0b1d3a 0%, #1b4d8e 100%);
+  }
+
+  /* ── UTILITY ── */
+  .container { max-width:1100px; margin:0 auto; padding:0 24px; }
+  .section { padding:80px 0; }
+  .text-center { text-align:center; }
+
+  /* ── ANNOUNCEMENT BAR ── */
+  .topbar {
+    background:var(--accent); color:var(--navy); text-align:center;
+    padding:10px 16px; font-weight:600; font-size:14px; letter-spacing:.3px;
+  }
+  .topbar span { opacity:.85; font-weight:400; }
+
+  /* ── NAV ── */
+  .nav {
+    background:var(--navy); padding:16px 0;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .nav-inner {
+    max-width:1100px; width:100%; padding:0 24px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .logo-text {
+    color:#fff; font-weight:700; font-size:18px; letter-spacing:.5px;
+  }
+  .logo-text span { color:var(--accent); }
+  .nav-cta {
+    background:var(--accent); color:var(--navy); font-weight:700;
+    padding:10px 24px; border-radius:6px; font-size:14px;
+    transition:background .2s;
+  }
+  .nav-cta:hover { background:var(--accent-hover); }
+
+  /* ── HERO ── */
+  .hero {
+    background:var(--gradient-hero);
+    position:relative; overflow:hidden;
+    padding:100px 0 80px;
+  }
+  .hero::before {
+    content:''; position:absolute; inset:0;
+    background:url('https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover;
+    opacity:.12;
+  }
+  .hero-content { position:relative; z-index:2; text-align:center; }
+  .hero-badge {
+    display:inline-block; background:rgba(232,168,56,.15); border:1px solid rgba(232,168,56,.4);
+    color:var(--accent); font-weight:600; font-size:13px; padding:6px 18px;
+    border-radius:50px; margin-bottom:24px; letter-spacing:.8px; text-transform:uppercase;
+  }
+  .hero h1 {
+    font-family:'Playfair Display', Georgia, serif;
+    color:#fff; font-size:clamp(36px, 5.5vw, 64px); font-weight:900;
+    line-height:1.1; margin-bottom:16px;
+  }
+  .hero h1 em {
+    font-style:normal; color:var(--accent);
+    background:linear-gradient(90deg, var(--accent), #f0c060);
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  }
+  .hero-sub {
+    color:rgba(255,255,255,.8); font-size:clamp(16px,2vw,20px);
+    max-width:640px; margin:0 auto 36px; line-height:1.7;
+  }
+  .hero-cta-group { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+  .btn-primary {
+    background:var(--accent); color:var(--navy); font-weight:800;
+    padding:16px 40px; border-radius:8px; font-size:17px;
+    transition:transform .2s, box-shadow .2s; display:inline-block;
+    box-shadow:0 4px 24px rgba(232,168,56,.35);
+  }
+  .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 32px rgba(232,168,56,.45); }
+  .btn-outline {
+    border:2px solid rgba(255,255,255,.35); color:#fff; font-weight:600;
+    padding:14px 36px; border-radius:8px; font-size:16px;
+    transition:border-color .2s, background .2s;
+  }
+  .btn-outline:hover { border-color:#fff; background:rgba(255,255,255,.08); }
+  .hero-stats {
+    display:flex; justify-content:center; gap:48px; margin-top:56px;
+    flex-wrap:wrap;
+  }
+  .hero-stat { text-align:center; }
+  .hero-stat .num {
+    font-family:'Playfair Display', serif; font-size:36px; font-weight:800;
+    color:var(--accent); line-height:1;
+  }
+  .hero-stat .label {
+    color:rgba(255,255,255,.6); font-size:13px; margin-top:6px;
+    text-transform:uppercase; letter-spacing:1px;
+  }
+
+  /* ── SOCIAL PROOF BAR ── */
+  .proof-bar {
+    background:var(--navy); border-top:1px solid rgba(255,255,255,.08);
+    padding:28px 0; text-align:center;
+  }
+  .proof-bar p {
+    color:rgba(255,255,255,.5); font-size:13px; text-transform:uppercase;
+    letter-spacing:1.5px; font-weight:600;
+  }
+
+  /* ── VALUE GRID ── */
+  .value-section { background:var(--white); }
+  .value-section .section-label {
+    text-transform:uppercase; font-size:13px; font-weight:700;
+    letter-spacing:2px; color:var(--blue); margin-bottom:12px;
+  }
+  .value-section h2 {
+    font-family:'Playfair Display', serif; font-size:clamp(28px,4vw,42px);
+    font-weight:800; line-height:1.2; margin-bottom:16px;
+  }
+  .value-section .lead {
+    color:var(--muted); font-size:18px; max-width:600px;
+    margin:0 auto 56px; line-height:1.7;
+  }
+  .value-grid {
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+    gap:32px;
+  }
+  .value-card {
+    background:var(--light-bg); border-radius:16px; padding:36px 32px;
+    border:1px solid #e8ecf2; transition:transform .25s, box-shadow .25s;
+  }
+  .value-card:hover { transform:translateY(-4px); box-shadow:0 12px 40px rgba(0,0,0,.06); }
+  .value-icon {
+    width:52px; height:52px; border-radius:12px;
+    background:var(--gradient-hero); display:flex;
+    align-items:center; justify-content:center;
+    font-size:24px; margin-bottom:20px; color:#fff;
+  }
+  .value-card h3 { font-size:19px; font-weight:700; margin-bottom:10px; }
+  .value-card p { color:var(--muted); font-size:15px; line-height:1.7; }
+
+  /* ── PRIZES ── */
+  .prizes-section { background:var(--light-bg); }
+  .prize-grid {
+    display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-top:48px;
+  }
+  .prize-card {
+    background:#fff; border-radius:16px; padding:48px 36px;
+    text-align:center; border:2px solid #e8ecf2;
+    transition:border-color .3s;
+  }
+  .prize-card:hover { border-color:var(--accent); }
+  .prize-amount {
+    font-family:'Playfair Display', serif; font-size:48px; font-weight:900;
+    color:var(--navy); margin-bottom:8px;
+  }
+  .prize-type {
+    font-size:13px; text-transform:uppercase; letter-spacing:1.5px;
+    color:var(--accent); font-weight:700; margin-bottom:20px;
+  }
+  .prize-card p { color:var(--muted); font-size:15px; line-height:1.7; }
+
+  /* ── PRIZE PRODUCTS ── */
+  .products-wrap {
+    max-width:800px; margin:36px auto 0; display:flex; flex-direction:column; gap:12px;
+  }
+  .product-row {
+    display:flex; align-items:center; gap:20px;
+    background:#fff; border:1px solid #e8ecf2; border-radius:12px;
+    padding:20px 24px; transition:border-color .25s, box-shadow .25s;
+  }
+  .product-row:hover {
+    border-color:var(--accent); box-shadow:0 4px 20px rgba(0,0,0,.05);
+  }
+  .product-price-tag {
+    flex-shrink:0; width:72px; height:72px; border-radius:12px;
+    background:var(--gradient-hero); display:flex; align-items:center;
+    justify-content:center; color:#fff; font-weight:800; font-size:15px;
+    letter-spacing:-.3px; line-height:1;
+  }
+  .product-info { flex:1; min-width:0; }
+  .product-info h4 {
+    font-size:16px; font-weight:700; color:var(--navy); margin-bottom:4px;
+  }
+  .product-info p {
+    color:var(--muted); font-size:14px; line-height:1.6; margin:0;
+  }
+  .products-divider {
+    display:flex; align-items:center; gap:16px; margin:28px 0 16px;
+  }
+  .products-divider::before, .products-divider::after {
+    content:''; flex:1; height:1px; background:#dde1e8;
+  }
+  .products-divider span {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:1.5px; color:var(--blue); white-space:nowrap;
+  }
+  .products-note {
+    color:var(--muted); font-size:13px; margin-top:24px; line-height:1.7;
+    max-width:600px; margin-left:auto; margin-right:auto; text-align:center;
+    font-style:italic;
+  }
+  @media (max-width:768px) {
+    .product-row { flex-direction:column; text-align:center; padding:20px; }
+    .product-price-tag { width:56px; height:56px; font-size:13px; }
+  }
+
+  /* ── HOW IT WORKS ── */
+  .how-section { background:#fff; }
+  .steps {
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+    gap:40px; margin-top:48px; counter-reset:step;
+  }
+  .step { text-align:center; position:relative; }
+  .step::before {
+    counter-increment:step; content:counter(step, decimal-leading-zero);
+    font-family:'Playfair Display', serif; font-size:56px; font-weight:900;
+    color:rgba(27,77,142,.08); display:block; line-height:1; margin-bottom:12px;
+  }
+  .step h3 { font-size:17px; font-weight:700; margin-bottom:8px; }
+  .step p { color:var(--muted); font-size:14px; line-height:1.7; }
+
+  /* ── EMCEE / TRUST ── */
+  .emcee-section { background:var(--light-bg); }
+  .emcee-flex {
+    display:flex; align-items:center; gap:48px; flex-wrap:wrap;
+  }
+  .emcee-img {
+    flex:0 0 280px; height:320px; border-radius:16px;
+    background:var(--gradient-hero); display:flex;
+    align-items:center; justify-content:center;
+    color:rgba(255,255,255,.3); font-size:64px;
+  }
+  .emcee-text { flex:1; min-width:300px; }
+  .emcee-text .section-label {
+    text-transform:uppercase; font-size:13px; font-weight:700;
+    letter-spacing:2px; color:var(--blue); margin-bottom:12px;
+  }
+  .emcee-text h2 {
+    font-family:'Playfair Display', serif; font-size:32px;
+    font-weight:800; margin-bottom:16px; line-height:1.2;
+  }
+  .emcee-text p { color:var(--muted); font-size:16px; line-height:1.8; margin-bottom:16px; }
+  .emcee-text .credential {
+    display:inline-block; background:rgba(27,77,142,.08);
+    color:var(--blue); font-weight:600; font-size:13px;
+    padding:6px 14px; border-radius:50px; margin-right:8px; margin-bottom:8px;
+  }
+
+  /* ── INVESTMENT / PRICING ── */
+  .pricing-section {
+    background:var(--gradient-hero); padding:80px 0;
+  }
+  .pricing-card {
+    background:#fff; border-radius:20px; max-width:720px;
+    margin:0 auto; padding:56px 48px; text-align:center;
+    box-shadow:0 24px 64px rgba(0,0,0,.2);
+  }
+  .pricing-label {
+    font-size:13px; text-transform:uppercase; letter-spacing:2px;
+    color:var(--blue); font-weight:700; margin-bottom:8px;
+  }
+  .pricing-amount {
+    font-family:'Playfair Display', serif; font-size:56px;
+    font-weight:900; color:var(--navy); margin-bottom:8px;
+  }
+  .pricing-note { color:var(--muted); font-size:15px; margin-bottom:32px; }
+  .pricing-features {
+    list-style:none; text-align:left; max-width:480px; margin:0 auto 36px;
+  }
+  .pricing-features li {
+    padding:12px 0; border-bottom:1px solid #f0f2f5;
+    font-size:15px; color:var(--text); display:flex; align-items:start; gap:12px;
+  }
+  .pricing-features li::before {
+    content:'✓'; color:var(--accent); font-weight:800; font-size:16px;
+    flex-shrink:0; margin-top:1px;
+  }
+  .pricing-cta { margin-top:8px; }
+
+  /* ── FAQ ── */
+  .faq-section { background:#fff; }
+  .faq-grid {
+    display:grid; grid-template-columns:1fr 1fr; gap:24px 48px; margin-top:48px;
+  }
+  .faq-item h3 {
+    font-size:16px; font-weight:700; margin-bottom:8px; color:var(--navy);
+  }
+  .faq-item p { color:var(--muted); font-size:14px; line-height:1.7; }
+
+  /* ── FINAL CTA ── */
+  .final-cta {
+    background:var(--navy); padding:80px 0; text-align:center;
+  }
+  .final-cta h2 {
+    font-family:'Playfair Display', serif; font-size:clamp(28px,4vw,42px);
+    font-weight:900; color:#fff; margin-bottom:16px; line-height:1.2;
+  }
+  .final-cta p {
+    color:rgba(255,255,255,.65); font-size:17px;
+    max-width:520px; margin:0 auto 36px; line-height:1.7;
+  }
+  .final-cta .btn-primary { font-size:18px; padding:18px 48px; }
+  .urgency-note {
+    color:rgba(255,255,255,.4); font-size:13px; margin-top:20px;
+    font-style:italic;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background:#070e1a; padding:32px 0; text-align:center;
+    color:rgba(255,255,255,.35); font-size:13px;
+  }
+  .footer a { color:var(--accent); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width:768px) {
+    .section { padding:56px 0; }
+    .prize-grid { grid-template-columns:1fr; }
+    .faq-grid { grid-template-columns:1fr; }
+    .emcee-flex { flex-direction:column; }
+    .emcee-img { flex:none; width:100%; height:220px; }
+    .hero-stats { gap:32px; }
+    .pricing-card { padding:40px 24px; }
+    .pricing-amount { font-size:42px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ ANNOUNCEMENT BAR ═══ -->
+<div class="topbar">
+  Limited to 8 contestants — 3 spots remaining <span>&nbsp;|&nbsp; Houston, TX &nbsp;•&nbsp; August 27, 2026</span>
+</div>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="https://www.validationinstitute.com" target="_blank"><img src="logo.svg" alt="Validation Institute" style="height:40px; width:auto;"></a>
+    <a href="#reserve" class="nav-cta">Reserve Your Spot →</a>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="container hero-content">
+    <div class="hero-badge">Houston Business Coalition on Health</div>
+    <h1>A Real Shark Tank<br>with <em>$50,000</em> at Stake</h1>
+    <p class="hero-sub">
+      Pitch your health benefits solution to 150–200 employer decision-makers.
+      Walk away with investment capital, free services — or both.
+    </p>
+    <div class="hero-cta-group">
+      <a href="#reserve" class="btn-primary">Compete for $50K →</a>
+      <a href="#how" class="btn-outline">See How It Works</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">$50K</div><div class="label">In Prizes</div></div>
+      <div class="hero-stat"><div class="num">150+</div><div class="label">Decision-Makers</div></div>
+      <div class="hero-stat"><div class="num">4</div><div class="label">Expert Judges</div></div>
+      <div class="hero-stat"><div class="num">1</div><div class="label">Iconic Event</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROOF BAR ═══ -->
+<div class="proof-bar">
+  <div class="container">
+    <p>Presented by the Houston Business Coalition on Health &nbsp;•&nbsp; Validation Institute &nbsp;•&nbsp; Quizzify</p>
+  </div>
+</div>
+
+<!-- ═══ WHAT YOU WIN ═══ -->
+<section class="prizes-section section">
+  <div class="container text-center">
+    <div class="section-label" style="text-transform:uppercase; font-size:13px; font-weight:700; letter-spacing:2px; color:var(--blue); margin-bottom:12px;">The Stakes</div>
+    <h2 style="font-family:'Playfair Display', serif; font-size:clamp(28px,4vw,42px); font-weight:800; margin-bottom:16px;">Two Winners. Two Paths to $25,000.</h2>
+    <p style="color:var(--muted); font-size:18px; max-width:600px; margin:0 auto;" >Each winner chooses: take the cash investment — or claim the services package.</p>
+    <div class="prize-grid">
+      <div class="prize-card">
+        <div class="prize-amount">$25,000</div>
+        <div class="prize-type">Judges' Pick</div>
+        <p>Three Harris County-area employers and one benefits consultant evaluate your pitch and select the most promising solution.</p>
+      </div>
+      <div class="prize-card">
+        <div class="prize-amount">$25,000</div>
+        <div class="prize-type">Audience Vote</div>
+        <p>150–200 benefits leaders vote live via app. The audience favorite takes home the second prize. Real market validation in real time.</p>
+      </div>
+    </div>
+    <p style="color:var(--muted); font-size:14px; margin-top:28px; max-width:700px; margin-left:auto; margin-right:auto; line-height:1.7;">
+      <strong>Your choice of prize:</strong> Cash investment (pari passu with cramdown protection) <em>or</em> credits convertible to any of these employer-facing Validation Institute products:
+    </p>
+    <div class="products-wrap">
+
+      <div class="products-divider"><span>For Solution Providers</span></div>
+
+      <div class="product-row">
+        <div class="product-price-tag" style="font-size:12px; line-height:1.2;">Custom</div>
+        <div class="product-info">
+          <h4>New or Additional Validations &amp; First-Year Renewals</h4>
+          <p>Get your solution validated — or add new validations and lock in your first renewal year</p>
+        </div>
+      </div>
+      <div class="product-row">
+        <div class="product-price-tag" style="font-size:12px; line-height:1.2;">2 Yrs</div>
+        <div class="product-info">
+          <h4>Supplemental Marketing Package</h4>
+          <p>Email blasts, podcast recording, LinkedIn campaign, PR releases, and referrals to our marketing partners</p>
+        </div>
+      </div>
+
+      <div class="products-divider"><span>Or Transfer Credits to Employer Prospects</span></div>
+
+      <div class="product-row">
+        <div class="product-price-tag">$3K</div>
+        <div class="product-info">
+          <h4>The Benefits Engagement Survey Tool</h4>
+          <p>Guaranteed (subject to a $1,000,000 penalty if we're wrong) to be the most valid way to measure engagement</p>
+        </div>
+      </div>
+      <div class="product-row">
+        <div class="product-price-tag">$5K</div>
+        <div class="product-info">
+          <h4>Certified Health Value Professional Course Designation</h4>
+          <p>Imagine a PhD in advisorship</p>
+        </div>
+      </div>
+      <div class="product-row">
+        <div class="product-price-tag">$5K</div>
+        <div class="product-info">
+          <h4>CORAPro</h4>
+          <p>Imagine a PhD in outcomes and contractual validity analysis</p>
+        </div>
+      </div>
+      <div class="product-row">
+        <div class="product-price-tag">$3K</div>
+        <div class="product-info">
+          <h4>RFP PowerTool</h4>
+          <p>Guaranteed (subject to a $1,000,000 penalty if we're wrong) to be the most valid way to procure point solutions, wellness, navigation and more</p>
+        </div>
+      </div>
+      <div class="product-row">
+        <div class="product-price-tag">$5K</div>
+        <div class="product-info">
+          <h4>Certified Employer Fiduciary Program</h4>
+          <p>Guaranteed (backed by $100,000 in ersatz "coinsurance") to protect you from ERISA lawsuits by employees</p>
+        </div>
+      </div>
+    </div>
+    <p class="products-note">
+      Credits are fully customizable and transferable — mix and match across categories, or gift them to employer clients.
+    </p>
+  </div>
+</section>
+
+<!-- ═══ WHAT YOU GET ═══ -->
+<section class="value-section section">
+  <div class="container text-center">
+    <div class="section-label">Win or Lose</div>
+    <h2>Every Contestant Walks Away with This</h2>
+    <p class="lead">Your $10,000 participation fee buys more than a pitch slot — it buys a pipeline.</p>
+    <div class="value-grid">
+      <div class="value-card">
+        <div class="value-icon">🎤</div>
+        <h3>5-Minute Pitch + 5-Min Q&A</h3>
+        <p>Present directly to 150–200 employer benefits leaders and take live questions from the judging panel.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🎯</div>
+        <h3>Warm Lead List</h3>
+        <p>The voting app includes a "Contact Me" button — every interested audience member becomes a qualified lead.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🏗️</div>
+        <h3>Booth &amp; Table Display</h3>
+        <p>Set up a presence at the event for follow-up conversations, demos, and relationship-building.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🎬</div>
+        <h3>Private Rehearsal</h3>
+        <p>Rehearse with Al Lewis, founder of Validation Institute and author of the two seminal books on employee population health services.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">💬</div>
+        <h3>Audience Comments + Contest</h3>
+        <p>Audience members leave actionable feedback. Award $100 to the most insightful comment and turn feedback into strategy.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🤝</div>
+        <h3>Private Judge Debriefs</h3>
+        <p>Each judge commits to a private post-event debrief. Get candid, expert-level feedback on your solution.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HOW IT WORKS ═══ -->
+<section class="how-section section" id="how">
+  <div class="container text-center">
+    <div style="text-transform:uppercase; font-size:13px; font-weight:700; letter-spacing:2px; color:var(--blue); margin-bottom:12px;">The Process</div>
+    <h2 style="font-family:'Playfair Display', serif; font-size:clamp(28px,4vw,42px); font-weight:800; margin-bottom:8px;">How It Works</h2>
+    <div class="steps">
+      <div class="step">
+        <h3>Apply & Reserve</h3>
+        <p>Secure your spot with the $10,000 participation fee. Limited to 8 contestants.</p>
+      </div>
+      <div class="step">
+        <h3>Rehearse</h3>
+        <p>Get a private coaching session with Al Lewis to sharpen your five-minute pitch.</p>
+      </div>
+      <div class="step">
+        <h3>Pitch Live</h3>
+        <p>Present to 150–200 decision-makers. Take five minutes of judge Q&A.</p>
+      </div>
+      <div class="step">
+        <h3>Win & Connect</h3>
+        <p>Collect your prize, your lead list, your booth traffic, and your judge debriefs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EMCEE ═══ -->
+<section class="emcee-section section">
+  <div class="container">
+    <div class="emcee-flex">
+      <div class="emcee-img">
+        <img src="al-lewisjpg.jpg" alt="Al Lewis" style="width:100%; height:100%; object-fit:cover; border-radius:16px;">
+      </div>
+      <div class="emcee-text">
+        <div class="section-label">Your Emcee &amp; Coach</div>
+        <h2>Al Lewis</h2>
+        <p>Founder of the Validation Institute and Quizzify. Author or co-author of the two seminal books on employee population health services. Al will personally rehearse with every contestant and emcee the event.</p>
+        <p>His mission: make sure every participant — win or lose — extracts maximum value from the day.</p>
+        <span class="credential">Validation Institute Founder</span>
+        <span class="credential">Quizzify CEO</span>
+        <span class="credential">Published Author</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRICING ═══ -->
+<section class="pricing-section" id="reserve">
+  <div class="container">
+    <div class="pricing-card">
+      <div class="pricing-label">Participation Investment</div>
+      <div class="pricing-amount">$10,000</div>
+      <p class="pricing-note">One-time fee. Everything below is included.</p>
+      <ul class="pricing-features">
+        <li>5-minute pitch to 150–200 employer decision-makers</li>
+        <li>5-minute live Q&A with the judging panel</li>
+        <li>Private rehearsal with Al Lewis</li>
+        <li>Booth and table display at the event</li>
+        <li>Qualified lead list via voting app "Contact Me" button</li>
+        <li>Audience comment feedback + Comments Contest</li>
+        <li>Private post-event debrief with each judge</li>
+        <li>Chance to win $25,000 (judges' pick or audience vote)</li>
+      </ul>
+      <div class="pricing-cta">
+        <!-- FLODESK: Replace href with your Flodesk checkout/e-commerce link -->
+        <a href="#" class="btn-primary" style="width:100%; display:block; text-align:center;">
+          Reserve Your Spot →
+        </a>
+      </div>
+      <p style="color:var(--muted); font-size:13px; margin-top:16px;">
+        Secure checkout powered by Stripe. Limited to 8 contestants.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="faq-section section">
+  <div class="container">
+    <div class="text-center">
+      <h2 style="font-family:'Playfair Display', serif; font-size:clamp(28px,4vw,42px); font-weight:800; margin-bottom:8px;">Common Questions</h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h3>Who is in the audience?</h3>
+        <p>150–200 employer benefits leaders and HR decision-makers from the Houston/Harris County area, convened by the Houston Business Coalition on Health.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Who are the judges?</h3>
+        <p>Three Harris County-area employers plus one benefits consultant. All commit to private post-event debriefs with contestants.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What does "choose your prize" mean?</h3>
+        <p>Winners select either a $25,000 cash investment (pari passu, cramdown-protected) or $25,000 in Quizzify/Validation Institute services — fully customizable and transferable.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What is the Comments Contest?</h3>
+        <p>Each contestant budgets $100 to award to the audience member whose comment they find most insightful. This incentivizes high-quality, actionable feedback.</p>
+      </div>
+      <div class="faq-item">
+        <h3>When and where?</h3>
+        <p>August 27, 2026 at the Houston Business Coalition on Health's two-day meeting (Aug 26–27). The Shark Tank is one of the main morning events on the 27th.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How many spots are available?</h3>
+        <p>The competition is limited to a small number of contestants to ensure each gets meaningful stage time, audience attention, and judge engagement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FINAL CTA ═══ -->
+<section class="final-cta">
+  <div class="container">
+    <h2>Your Audience Is Already<br>in the Room</h2>
+    <p>150+ employer decision-makers. $50,000 in prizes. One morning. Don't just pitch — get validated.</p>
+    <!-- FLODESK: Replace href with your Flodesk checkout/e-commerce link -->
+    <a href="#" class="btn-primary">Compete for $50K →</a>
+    <p class="urgency-note">Limited spots available. Early applicants get priority scheduling.</p>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    <p style="margin-bottom:8px;">
+      Presented by <a href="https://www.validationinstitute.com" target="_blank">Validation Institute</a> &amp;
+      <a href="https://www.quizzify.com" target="_blank">Quizzify</a> in partnership with the
+      Houston Business Coalition on Health
+    </p>
+    <p>&copy; 2026 Validation Institute. All rights reserved. &nbsp;|&nbsp; Questions? <a href="mailto:al@quizzify.com">al@quizzify.com</a></p>
+  </div>
+</footer>
+
+<!-- ═══ FLODESK IMPLEMENTATION NOTES (Remove before publishing) ═══ -->
+<!--
+  ╔══════════════════════════════════════════════════════════════════╗
+  ║  FLODESK IMPLEMENTATION GUIDE                                   ║
+  ╠══════════════════════════════════════════════════════════════════╣
+  ║                                                                 ║
+  ║  OPTION A: Use Flodesk's Landing Page Builder                   ║
+  ║  ─────────────────────────────────────────────────────────────── ║
+  ║  1. In Flodesk → Landing Pages → Create New                     ║
+  ║  2. Choose a blank or minimal template                          ║
+  ║  3. Rebuild this layout using Flodesk drag-and-drop blocks:     ║
+  ║     - Hero: Full-width image block + text overlay               ║
+  ║     - Stats: Multi-column text block                            ║
+  ║     - Prize cards: Two-column layout block                      ║
+  ║     - Value grid: Icon + text blocks in columns                 ║
+  ║     - CTA: Button block linked to Flodesk checkout              ║
+  ║  4. Since e-commerce is already hooked up, link the CTA         ║
+  ║     button to your Flodesk checkout product ($10,000 fee)       ║
+  ║  5. Match colors: Navy #0b1d3a, Gold #e8a838, Blue #1b4d8e     ║
+  ║  6. Use Inter + Playfair Display fonts (or closest Flodesk has) ║
+  ║                                                                 ║
+  ║  OPTION B: Use Flodesk's Custom Code (if supported)             ║
+  ║  ─────────────────────────────────────────────────────────────── ║
+  ║  1. Flodesk supports custom HTML in email but landing pages     ║
+  ║     are builder-only. For full custom HTML, host this file      ║
+  ║     on your own domain and link to it from Flodesk emails       ║
+  ║  2. Alternatively, host on landing.validationinstitute.com      ║
+  ║     and embed Flodesk form/checkout via Flodesk's embed code    ║
+  ║                                                                 ║
+  ║  OPTION C: Host Externally + Flodesk Checkout Embed             ║
+  ║  ─────────────────────────────────────────────────────────────── ║
+  ║  1. Host this HTML on your domain (e.g. via Netlify, Vercel,    ║
+  ║     or your existing hosting for validationinstitute.com)       ║
+  ║  2. Replace the CTA button href values with your Flodesk        ║
+  ║     checkout link (Flodesk → E-commerce → Products → Copy link) ║
+  ║  3. Optionally add a Flodesk email capture form above the       ║
+  ║     pricing section to build a nurture list                     ║
+  ║  4. Add Flodesk's tracking pixel in the <head> for analytics    ║
+  ║                                                                 ║
+  ║  RECOMMENDED APPROACH: Option C                                 ║
+  ║  Host this page at landing.validationinstitute.com and point    ║
+  ║  all CTA buttons to the Flodesk Stripe checkout. This gives     ║
+  ║  you full design control + Flodesk payment processing.          ║
+  ║                                                                 ║
+  ║  HERO IMAGE: Replace the Pexels URL in .hero::before with      ║
+  ║  a high-res image from Pexels or Pixabay. Search terms:         ║
+  ║  "business conference stage", "pitch competition",              ║
+  ║  "speaker audience", "corporate event spotlight"                ║
+  ║                                                                 ║
+  ║  LINK TO HBCH EVENT: Once Chris posts the save-the-date or     ║
+  ║  event page, add that URL to the FAQ and nav.                   ║
+  ║                                                                 ║
+  ╚══════════════════════════════════════════════════════════════════╝
+-->
+
+</body>
+</html>
