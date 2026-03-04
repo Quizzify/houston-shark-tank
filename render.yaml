@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: houston-shark-tank
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: .
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /shark-tank-landing.html
