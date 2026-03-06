@@ -342,13 +342,36 @@
   /* ── RESPONSIVE ── */
   @media (max-width:768px) {
     .section { padding:56px 0; }
+    .hero { padding:64px 0 56px; }
+    .hero h1 { font-size:clamp(28px, 8vw, 40px); }
+    .hero-sub { font-size:16px; margin-bottom:28px; }
+    .hero-cta-group { flex-direction:column; align-items:center; }
+    .hero-cta-group .btn-primary,
+    .hero-cta-group .btn-outline { width:100%; max-width:320px; text-align:center; }
+    .hero-stats { gap:24px; margin-top:40px; }
+    .hero-stat .num { font-size:28px; }
     .prize-grid { grid-template-columns:1fr; }
+    .prize-amount { font-size:36px; }
+    .value-grid { grid-template-columns:1fr; }
+    .steps { grid-template-columns:1fr 1fr; gap:32px; }
     .faq-grid { grid-template-columns:1fr; }
     .emcee-flex { flex-direction:column; }
     .emcee-img { flex:none; width:100%; height:220px; }
-    .hero-stats { gap:32px; }
+    .emcee-text { min-width:0; }
     .pricing-card { padding:40px 24px; }
     .pricing-amount { font-size:42px; }
+    .final-cta h2 { font-size:clamp(24px, 6vw, 32px); }
+    .final-cta .btn-primary { width:100%; max-width:320px; font-size:16px; padding:16px 32px; }
+    .nav-cta { padding:8px 16px; font-size:13px; }
+  }
+  @media (max-width:480px) {
+    .container { padding:0 16px; }
+    .steps { grid-template-columns:1fr; }
+    .hero-stats { gap:16px; }
+    .hero-stat .num { font-size:24px; }
+    .hero-stat .label { font-size:11px; }
+    .topbar { font-size:12px; padding:8px 12px; }
+    .topbar span { display:block; margin-top:2px; }
   }
 </style>
 </head>
@@ -359,7 +382,7 @@
   Demo Only — For Discussion Purposes
 </div>
 <div class="topbar">
-  Limited to 5 contestants — 3 spots remaining <span>&nbsp;|&nbsp; Houston, TX &nbsp;•&nbsp; August 27, 2026</span>
+  Limited to 5 contestants <span>&nbsp;|&nbsp; Houston, TX &nbsp;•&nbsp; August 27, 2026</span>
 </div>
 
 <!-- ═══ NAV ═══ -->
@@ -588,8 +611,7 @@
         <li>Chance to win $25,000 (judges' pick or audience vote)</li>
       </ul>
       <div class="pricing-cta">
-        <!-- FLODESK: Replace href with your Flodesk checkout/e-commerce link -->
-        <a href="#" class="btn-primary" style="width:100%; display:block; text-align:center;">
+        <a href="https://buy.stripe.com/8x24gA8HAesJ5tV91y57W0E" class="btn-primary" style="width:100%; display:block; text-align:center;">
           Reserve Your Spot →
         </a>
       </div>
@@ -640,8 +662,7 @@
   <div class="container">
     <h2>Your Audience Is Already<br>in the Room</h2>
     <p>150+ employer decision-makers. $50,000 in prizes. One morning. Don't just pitch — get validated.</p>
-    <!-- FLODESK: Replace href with your Flodesk checkout/e-commerce link -->
-    <a href="#" class="btn-primary">Compete for $50K →</a>
+    <a href="https://buy.stripe.com/8x24gA8HAesJ5tV91y57W0E" class="btn-primary">Compete for $50K →</a>
     <p class="urgency-note">Limited spots available. Early applicants get priority scheduling.</p>
   </div>
 </section>
@@ -658,60 +679,6 @@
   </div>
 </footer>
 
-<!-- ═══ FLODESK IMPLEMENTATION NOTES (Remove before publishing) ═══ -->
-<!--
-  ╔══════════════════════════════════════════════════════════════════╗
-  ║  FLODESK IMPLEMENTATION GUIDE                                   ║
-  ╠══════════════════════════════════════════════════════════════════╣
-  ║                                                                 ║
-  ║  OPTION A: Use Flodesk's Landing Page Builder                   ║
-  ║  ─────────────────────────────────────────────────────────────── ║
-  ║  1. In Flodesk → Landing Pages → Create New                     ║
-  ║  2. Choose a blank or minimal template                          ║
-  ║  3. Rebuild this layout using Flodesk drag-and-drop blocks:     ║
-  ║     - Hero: Full-width image block + text overlay               ║
-  ║     - Stats: Multi-column text block                            ║
-  ║     - Prize cards: Two-column layout block                      ║
-  ║     - Value grid: Icon + text blocks in columns                 ║
-  ║     - CTA: Button block linked to Flodesk checkout              ║
-  ║  4. Since e-commerce is already hooked up, link the CTA         ║
-  ║     button to your Flodesk checkout product ($10,000 fee)       ║
-  ║  5. Match colors: Navy #0b1d3a, Gold #e8a838, Blue #1b4d8e     ║
-  ║  6. Use Inter + Playfair Display fonts (or closest Flodesk has) ║
-  ║                                                                 ║
-  ║  OPTION B: Use Flodesk's Custom Code (if supported)             ║
-  ║  ─────────────────────────────────────────────────────────────── ║
-  ║  1. Flodesk supports custom HTML in email but landing pages     ║
-  ║     are builder-only. For full custom HTML, host this file      ║
-  ║     on your own domain and link to it from Flodesk emails       ║
-  ║  2. Alternatively, host on landing.validationinstitute.com      ║
-  ║     and embed Flodesk form/checkout via Flodesk's embed code    ║
-  ║                                                                 ║
-  ║  OPTION C: Host Externally + Flodesk Checkout Embed             ║
-  ║  ─────────────────────────────────────────────────────────────── ║
-  ║  1. Host this HTML on your domain (e.g. via Netlify, Vercel,    ║
-  ║     or your existing hosting for validationinstitute.com)       ║
-  ║  2. Replace the CTA button href values with your Flodesk        ║
-  ║     checkout link (Flodesk → E-commerce → Products → Copy link) ║
-  ║  3. Optionally add a Flodesk email capture form above the       ║
-  ║     pricing section to build a nurture list                     ║
-  ║  4. Add Flodesk's tracking pixel in the <head> for analytics    ║
-  ║                                                                 ║
-  ║  RECOMMENDED APPROACH: Option C                                 ║
-  ║  Host this page at landing.validationinstitute.com and point    ║
-  ║  all CTA buttons to the Flodesk Stripe checkout. This gives     ║
-  ║  you full design control + Flodesk payment processing.          ║
-  ║                                                                 ║
-  ║  HERO IMAGE: Replace the Pexels URL in .hero::before with      ║
-  ║  a high-res image from Pexels or Pixabay. Search terms:         ║
-  ║  "business conference stage", "pitch competition",              ║
-  ║  "speaker audience", "corporate event spotlight"                ║
-  ║                                                                 ║
-  ║  LINK TO HBCH EVENT: Once Chris posts the save-the-date or     ║
-  ║  event page, add that URL to the FAQ and nav.                   ║
-  ║                                                                 ║
-  ╚══════════════════════════════════════════════════════════════════╝
--->
 
 </body>
 </html>
