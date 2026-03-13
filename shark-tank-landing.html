@@ -332,6 +332,24 @@
     font-style:italic;
   }
 
+  /* ── SPOTS REMAINING BANNER ── */
+  .spots-banner {
+    background:linear-gradient(90deg, #b91c1c, #dc2626, #b91c1c);
+    color:#fff; text-align:center; padding:18px 16px;
+    font-family:'Inter', sans-serif; animation:pulse-bg 2s ease-in-out infinite;
+  }
+  .spots-banner .spots-num {
+    font-family:'Playfair Display', serif; font-size:28px; font-weight:900;
+    display:inline; margin:0 6px;
+  }
+  .spots-banner .spots-text {
+    font-size:18px; font-weight:700; letter-spacing:.5px; text-transform:uppercase;
+  }
+  @keyframes pulse-bg {
+    0%, 100% { background:linear-gradient(90deg, #b91c1c, #dc2626, #b91c1c); }
+    50% { background:linear-gradient(90deg, #991b1b, #b91c1c, #991b1b); }
+  }
+
   /* ── FOOTER ── */
   .footer {
     background:#070e1a; padding:32px 0; text-align:center;
@@ -376,6 +394,11 @@
 </style>
 </head>
 <body>
+
+<!-- ═══ SPOTS REMAINING BANNER ═══ -->
+<div class="spots-banner">
+  <span class="spots-text">Only <span class="spots-num">%%SPOTS_REMAINING%%</span> Spots Left!</span>
+</div>
 
 <!-- ═══ ANNOUNCEMENT BAR ═══ -->
 <div class="topbar">
@@ -574,7 +597,7 @@
         </a>
       </div>
       <p style="color:var(--muted); font-size:13px; margin-top:16px;">
-        Secure checkout powered by Stripe. Limited to 5 contestants.
+        Secure checkout powered by Stripe. Only <strong>%%SPOTS_REMAINING%%</strong> spots remaining.
       </p>
     </div>
   </div>
@@ -621,7 +644,7 @@
     <h2>Your Audience Is Already<br>in the Room</h2>
     <p>150+ employer decision-makers. $50,000 in prizes. One morning. Don't just pitch — get validated.</p>
     <a href="https://buy.stripe.com/8x24gA8HAesJ5tV91y57W0E" class="btn-primary">Compete for $50K →</a>
-    <p class="urgency-note">Limited spots available. Early applicants get priority scheduling.</p>
+    <p class="urgency-note">Only <strong style="color:var(--accent); font-size:16px;">%%SPOTS_REMAINING%%</strong> spots remaining. Early applicants get priority scheduling.</p>
   </div>
 </section>
 
