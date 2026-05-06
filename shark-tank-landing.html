@@ -168,67 +168,56 @@
   /* ── PRIZES ── */
   .prizes-section { background:var(--light-bg); }
   .prize-grid {
-    display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-top:48px;
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:24px; margin-top:48px;
   }
   .prize-card {
-    background:#fff; border-radius:16px; padding:48px 36px;
+    background:#fff; border-radius:16px; padding:40px 28px;
     text-align:center; border:2px solid #e8ecf2;
     transition:border-color .3s;
   }
   .prize-card:hover { border-color:var(--accent); }
-  .prize-amount {
-    font-family:'Playfair Display', serif; font-size:48px; font-weight:900;
-    color:var(--navy); margin-bottom:8px;
+  .prize-badge {
+    width:80px; height:80px; border-radius:50%;
+    background:var(--navy); color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Playfair Display', serif; font-size:22px; font-weight:800;
+    margin:0 auto 20px; letter-spacing:-.5px;
   }
+  .prize-badge.badge-cash { background:var(--blue); }
+  .prize-badge.badge-services { background:var(--accent); color:var(--navy); }
   .prize-type {
-    font-size:13px; text-transform:uppercase; letter-spacing:1.5px;
-    color:var(--accent); font-weight:700; margin-bottom:20px;
+    font-family:'Playfair Display', serif;
+    font-size:22px; font-weight:800;
+    color:var(--navy); margin-bottom:14px;
   }
-  .prize-card p { color:var(--muted); font-size:15px; line-height:1.7; }
+  .prize-card p { color:var(--muted); font-size:14.5px; line-height:1.7; }
 
-  /* ── PRIZE PRODUCTS ── */
-  .products-wrap {
-    max-width:800px; margin:36px auto 0; display:flex; flex-direction:column; gap:12px;
+  /* ── CREDITS SUMMARY ── */
+  .credits-summary {
+    max-width:780px; margin:48px auto 0;
+    background:#fff; border:1px solid #e8ecf2; border-radius:16px;
+    padding:36px 40px;
   }
-  .product-row {
-    display:flex; align-items:center; gap:20px;
-    background:#fff; border:1px solid #e8ecf2; border-radius:12px;
-    padding:20px 24px; transition:border-color .25s, box-shadow .25s;
+  .credits-summary h3 {
+    font-family:'Playfair Display', serif; font-size:20px; font-weight:800;
+    color:var(--navy); text-align:center; margin-bottom:24px;
   }
-  .product-row:hover {
-    border-color:var(--accent); box-shadow:0 4px 20px rgba(0,0,0,.05);
+  .credits-grid {
+    display:grid; grid-template-columns:1fr 1fr; gap:18px;
   }
-  .product-price-tag {
-    flex-shrink:0; width:72px; height:72px; border-radius:12px;
-    background:var(--gradient-hero); display:flex; align-items:center;
-    justify-content:center; color:#fff; font-weight:800; font-size:15px;
-    letter-spacing:-.3px; line-height:1;
+  .credit-item {
+    padding:16px 20px; background:var(--light-bg); border-radius:10px;
   }
-  .product-info { flex:1; min-width:0; }
-  .product-info h4 {
-    font-size:16px; font-weight:700; color:var(--navy); margin-bottom:4px;
+  .credit-item strong {
+    display:block; font-size:14px; font-weight:700;
+    color:var(--navy); margin-bottom:4px;
   }
-  .product-info p {
-    color:var(--muted); font-size:14px; line-height:1.6; margin:0;
+  .credit-item span {
+    font-size:14px; line-height:1.6; color:var(--muted);
   }
-  .products-divider {
-    display:flex; align-items:center; gap:16px; margin:28px 0 16px;
-  }
-  .products-divider::before, .products-divider::after {
-    content:''; flex:1; height:1px; background:#dde1e8;
-  }
-  .products-divider span {
-    font-size:12px; font-weight:700; text-transform:uppercase;
-    letter-spacing:1.5px; color:var(--blue); white-space:nowrap;
-  }
-  .products-note {
-    color:var(--muted); font-size:13px; margin-top:24px; line-height:1.7;
-    max-width:600px; margin-left:auto; margin-right:auto; text-align:center;
-    font-style:italic;
-  }
-  @media (max-width:768px) {
-    .product-row { flex-direction:column; text-align:center; padding:20px; }
-    .product-price-tag { width:56px; height:56px; font-size:13px; }
+  .credits-note {
+    font-size:13px; font-style:italic; color:var(--muted);
+    text-align:center; margin-top:22px; line-height:1.6;
   }
 
   /* ── HOW IT WORKS ── */
@@ -368,7 +357,8 @@
     .hero-stats { grid-template-columns:repeat(2, auto); gap:24px 40px; margin-top:40px; }
     .hero-stat .num { font-size:28px; }
     .prize-grid { grid-template-columns:1fr; }
-    .prize-amount { font-size:36px; }
+    .credits-grid { grid-template-columns:1fr; }
+    .credits-summary { padding:28px 24px; }
     .value-grid { grid-template-columns:1fr; }
     .steps { grid-template-columns:1fr 1fr; gap:32px; }
     .faq-grid { grid-template-columns:1fr; }
@@ -414,7 +404,7 @@
     <h1>A Real Shark Tank<br>with <em>$50,000</em> at Stake</h1>
     <p class="hero-sub">
       Pitch your health benefits solution to 150–200 employer decision-makers.
-      Walk away with investment capital, free services — or both.
+      Two winners. Each picks one: investment capital, cash, or up to $50K in services.
     </p>
     <div class="hero-cta-group">
       <a href="#reserve" class="btn-primary">Compete for $50K →</a>
@@ -440,44 +430,48 @@
 <section class="prizes-section section">
   <div class="container text-center">
     <div class="section-label" style="text-transform:uppercase; font-size:13px; font-weight:700; letter-spacing:2px; color:var(--blue); margin-bottom:12px;">The Stakes</div>
-    <h2 style="font-family:'Playfair Display', serif; font-size:clamp(28px,4vw,42px); font-weight:800; margin-bottom:16px;">Two Winners. Two Paths to $25,000.</h2>
-    <p style="color:var(--muted); font-size:18px; max-width:600px; margin:0 auto;" >Each winner chooses: take the cash investment — or claim the services package.</p>
+    <h2 style="font-family:'Playfair Display', serif; font-size:clamp(28px,4vw,42px); font-weight:800; margin-bottom:16px;">Each Winner Picks One</h2>
+    <p style="color:var(--muted); font-size:18px; max-width:720px; margin:0 auto;">Two winners — one Judges' Pick, one Audience Vote. Each chooses between three options: the $25,000 investment from the guy who literally wrote the books on outcomes validation, or one of two cash-equivalent swaps.</p>
     <div class="prize-grid">
       <div class="prize-card">
-        <div class="prize-amount">$25,000</div>
-        <div class="prize-type">Judges' Pick</div>
-        <p>Three Harris County-area employers and one benefits consultant evaluate your pitch and select the most promising solution.</p>
+        <div class="prize-badge">$25K</div>
+        <div class="prize-type">Investment</div>
+        <p>A $25,000 investment in your company from Al Lewis — founder of Validation Institute and Quizzify, and author of the seminal books on outcomes validation. The signal value alone is worth more than the check.</p>
       </div>
       <div class="prize-card">
-        <div class="prize-amount">$25,000</div>
-        <div class="prize-type">Audience Vote</div>
-        <p>150–200 benefits leaders vote live via app. The audience favorite takes home the second prize. Real market validation in real time.</p>
+        <div class="prize-badge badge-cash">$10K</div>
+        <div class="prize-type">Cash</div>
+        <p>Don't need outside capital? Swap the investment for $10,000 in cash — meaning you just got paid to pitch 150–200 Houston-area employer benefits leaders.</p>
+      </div>
+      <div class="prize-card">
+        <div class="prize-badge badge-services">$50K</div>
+        <div class="prize-type">Validation Institute or Quizzify Services</div>
+        <p>Or swap for $50,000 in fully customizable Validation Institute or Quizzify services — fully transferable, so you can use them yourself or gift them to employer clients as a relationship-builder.</p>
       </div>
     </div>
-    <p style="color:var(--muted); font-size:14px; margin-top:28px; max-width:700px; margin-left:auto; margin-right:auto; line-height:1.7;">
-      <strong>Your choice of prize:</strong> Cash investment (pari passu with cramdown protection) <em>or</em> $25,000 in transferable credits for Validation Institute and Quizzify products.
-    </p>
-    <div style="max-width:700px; margin:28px auto 0; display:grid; grid-template-columns:1fr 1fr; gap:20px;">
-      <div style="background:var(--light-bg); border:1px solid #e8ecf2; border-radius:12px; padding:24px;">
-        <h4 style="font-size:15px; font-weight:700; color:var(--navy); margin-bottom:8px;">Validations &amp; Renewals</h4>
-        <p style="color:var(--muted); font-size:14px; line-height:1.6; margin:0;">New validations, additional validations, and first-year renewals for your solution</p>
+
+    <div class="credits-summary">
+      <h3>About the Services Swap</h3>
+      <div class="credits-grid">
+        <div class="credit-item">
+          <strong>Pick Either or Both</strong>
+          <span>Apply your $50,000 to Validation Institute services (outcomes validation, certification, consulting), Quizzify employee health literacy quizzes, or split the credits across both.</span>
+        </div>
+        <div class="credit-item">
+          <strong>Fully Customizable</strong>
+          <span>Tailor the work to your solution, your client's plan design, or specific health topics that matter to a target population.</span>
+        </div>
+        <div class="credit-item">
+          <strong>Fully Transferable</strong>
+          <span>Use the credits yourself for your employer clients, or gift them to one or more brokerage clients as a value-add.</span>
+        </div>
+        <div class="credit-item">
+          <strong>Backed by Al Lewis</strong>
+          <span>Both Validation Institute and Quizzify were built by the same team — trusted by employers managing health benefits for hundreds of thousands of lives.</span>
+        </div>
       </div>
-      <div style="background:var(--light-bg); border:1px solid #e8ecf2; border-radius:12px; padding:24px;">
-        <h4 style="font-size:15px; font-weight:700; color:var(--navy); margin-bottom:8px;">Marketing Package</h4>
-        <p style="color:var(--muted); font-size:14px; line-height:1.6; margin:0;">Email blasts, podcast recording, LinkedIn campaigns, PR releases, and referrals</p>
-      </div>
-      <div style="background:var(--light-bg); border:1px solid #e8ecf2; border-radius:12px; padding:24px;">
-        <h4 style="font-size:15px; font-weight:700; color:var(--navy); margin-bottom:8px;">Employer-Facing Tools</h4>
-        <p style="color:var(--muted); font-size:14px; line-height:1.6; margin:0;">Benefits Engagement Survey, RFP PowerTool, Certified Health Value Professional course, CORAPro outcomes analysis, and Certified Employer Fiduciary Program</p>
-      </div>
-      <div style="background:var(--light-bg); border:1px solid #e8ecf2; border-radius:12px; padding:24px;">
-        <h4 style="font-size:15px; font-weight:700; color:var(--navy); margin-bottom:8px;">Quizzify</h4>
-        <p style="color:var(--muted); font-size:14px; line-height:1.6; margin:0;">Employee health literacy quizzes and engagement programs for your employer clients</p>
-      </div>
+      <p class="credits-note">Two winners, three options each. Maximum total payout: $100,000 in transferable Validation Institute or Quizzify services across both winners.</p>
     </div>
-    <p style="color:var(--muted); font-size:13px; margin-top:24px; line-height:1.7; max-width:600px; margin-left:auto; margin-right:auto; font-style:italic;">
-      Credits are fully customizable and transferable — mix and match across categories, or gift them to employer clients.
-    </p>
   </div>
 </section>
 
@@ -583,7 +577,7 @@
         <li>Qualified lead list via voting app "Contact Me" button</li>
         <li>Audience comment feedback + Comments Contest</li>
         <li>Private post-event debrief with each judge</li>
-        <li>Chance to win $25,000 (judges' pick or audience vote)</li>
+        <li>Chance to win — pick one: $25K investment, $10K cash, or $50K in services</li>
       </ul>
       <div class="pricing-cta">
         <a href="https://buy.stripe.com/8x24gA8HAesJ5tV91y57W0E" class="btn-primary" style="width:100%; display:block; text-align:center;">
@@ -613,8 +607,12 @@
         <p>Three Harris County-area employers plus one benefits consultant. All commit to private post-event debriefs with contestants.</p>
       </div>
       <div class="faq-item">
-        <h3>What does "choose your prize" mean?</h3>
-        <p>Winners select either a $25,000 cash investment (pari passu, cramdown-protected) or $25,000 in Quizzify/Validation Institute services — fully customizable and transferable.</p>
+        <h3>How does the prize swap work?</h3>
+        <p>Each winner picks one of three options for their $25,000 prize: (1) take the cash investment from Al Lewis — a vote of confidence from the man who literally wrote the books on outcomes validation; (2) swap it for $10,000 in cash, meaning you got paid to pitch 150–200 Houston-area employer benefits leaders; or (3) swap it for $50,000 in transferable Validation Institute or Quizzify services, fully customizable and giftable to clients. Both winners pick independently.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How is the audience vote conducted?</h3>
+        <p>Audience members vote live via mobile app immediately after all pitches are completed. The audience favorite wins one of the two $25,000 prizes — real market validation from the employer benefits leaders who actually buy these solutions. The other prize goes to the Judges' Pick.</p>
       </div>
       <div class="faq-item">
         <h3>What is the Comments Contest?</h3>
